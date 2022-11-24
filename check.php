@@ -1,7 +1,7 @@
 <?php
 session_start();
 function checkSessionValidity(){
-        print_r($_SESSION);
+        //print_r($_SESSION);
         if ($_SESSION['is_login'] !== true) {
             var_dump("is_login not true");
             session_destroy();
@@ -24,13 +24,13 @@ function checkSessionValidity(){
             die;
             header('Location: ./login.php');
         }
-        if ($_SESSION['username'] !== $_SERVER['HTTP_USER_AGENT']) {
+        if ($_SESSION['user_agent'] !== $_SERVER['HTTP_USER_AGENT']) {
             var_dump("username not valid");
             session_destroy();
             die;
             header('Location: ./login.php');  
         }
-        if (!isset($_SESSION['username'])) {
+        if (!isset($_SESSION['user_agent'])) {
             var_dump("username not set");
             die;
             header('Location: ./login.php');

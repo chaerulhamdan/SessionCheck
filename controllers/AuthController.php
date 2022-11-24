@@ -11,10 +11,6 @@
             username = '$username';";
             $result = $connection->query($query);
 
-            // $query = "INSERT INTO users(username, password) VALUES ('$username', '$hash');";
-            // $connection->query
-            // ($query);
-
             if($result->num_rows > 0){
                 // data valid
                 $row = $result->fetch_assoc();
@@ -29,11 +25,9 @@
 
                     $_SESSION['is_login'] = true;
                     $_SESSION['ip_address'] = $ip_address;
-                    $_SESSION['username'] = $useragent;
+                    $_SESSION['user_agent'] = $useragent;
                     $_SESSION['lastLogin'] = $time;
                     $_SESSION['city'] = $city;
-                    
-
                     //print_r($row);
 
                     header('Location: ../check.php');
