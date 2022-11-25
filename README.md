@@ -9,3 +9,4 @@
 - database sql backup (sessioncheck.sql)
 - Ada juga fitur Register  untuk menyimpan data user kedalam database yang passwordnya di hash terlebih dahulu
 di controllers/RegisterController.php
+- demo login username : Admin, password : 123456 
